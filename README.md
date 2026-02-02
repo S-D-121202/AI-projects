@@ -40,8 +40,3 @@ The complete pipeline — preprocessing, feature extraction, training, and predi
 - **NumPy** – numerical computations
 - **NLTK** – NLP preprocessing
 - **SciPy** – Gaussian probability density (`norm.logpdf`)
-
----
-
-## 📂 Project Structure
-
