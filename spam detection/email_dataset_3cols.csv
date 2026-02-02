@@ -1,0 +1,21 @@
+label,text,label_num
+spam,Congratulations! You have won a free lottery prize. Claim now.,1
+ham,Meeting scheduled for tomorrow at 10 AM.,0
+spam,Limited time offer! Buy one get one free.,1
+ham,Please find the attached assignment submission.,0
+spam,Win cash rewards instantly by clicking this link.,1
+ham,Can we reschedule our call to next week?,0
+spam,Exclusive deal just for you. Hurry up!,1
+ham,The project report has been uploaded to the portal.,0
+spam,Urgent! Your account has been compromised.,1
+ham,Lunch plan confirmed for today.,0
+spam,Get cheap medicines without prescription.,1
+ham,Reminder: Pay electricity bill by tonight.,0
+spam,You are selected for a free vacation package.,1
+ham,Let us know your availability for the interview.,0
+spam,Earn money from home easily.,1
+ham,Class has been postponed to Monday.,0
+spam,Act now to secure your loan approval.,1
+ham,Notes from today's lecture are shared.,0
+spam,Special discount on electronics. Order now.,1
+ham,Thank you for your prompt response.,0
