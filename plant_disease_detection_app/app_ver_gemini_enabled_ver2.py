@@ -21,14 +21,13 @@ from SCOLD_explainability_test_version import (
     SCOLDVisualizer
 )
 
-os.environ["GOOGLE_API_KEY"] = "AQ.Ab8RN6JoGg0N0EoZKRqv4akgEJ8kNfNmLmBnOScxqpdoHa7q-A"
-
 chat_model = ChatGoogleGenerativeAI(
     model="gemini-3.7-flash",
     temperature=1,
     thinking_level="low",
     request_timeout=30,
-    max_retries=0
+    max_retries=0,
+    google_api_key=st.secrets["GEMINI_API_KEY"]
 )
 
 # ============================================================
