@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 from PIL import Image
 from gtts import gTTS
-import ollama as olm
 import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 
