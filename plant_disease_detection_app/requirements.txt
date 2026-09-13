@@ -8,3 +8,4 @@ opencv-python-headless==5.0.0.93
 Pillow==12.3.0
 gTTS==2.5.4
 langchain-google-genai==4.3.4
+matplotlib
