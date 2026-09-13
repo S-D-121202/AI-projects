@@ -7,8 +7,12 @@ from transformers import AutoProcessor, AutoTokenizer, AutoModel
 from PIL import Image
 
 class SCOLD(nn.Module):
-    def __init__(self, base_model_name="./saved_clip_model", projection_dim=512):
+    def __init__(self, base_model_name="saved_clip_model", projection_dim=512):
         super(SCOLD, self).__init__()
+        base_model_name = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            base_model_name
+        )
         clip_model = AutoModel.from_pretrained(base_model_name, local_files_only=True, attn_implementation = 'eager')
         self.vision_encoder = clip_model.vision_model
         self.text_encoder = clip_model.text_model
