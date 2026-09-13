@@ -48,15 +48,20 @@ st.set_page_config(
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-BASE_MODEL_PATH = "./saved_clip_model"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-SCOLD_WEIGHTS_PATH = (
-    "./finetuned_scold_leafnet_ver2/scold_weights.pth"
+BASE_MODEL_PATH = os.path.join(BASE_DIR, "saved_clip_model")
+
+SCOLD_WEIGHTS_PATH = os.path.join(
+    BASE_DIR,
+    "finetuned_scold_leafnet_ver2",
+    "scold_weights.pth"
 )
 
-CLASS_SENTENCES_PATH = "class_sentences.npy"
-
-OLLAMA_MODEL = "llama3"
+CLASS_SENTENCES_PATH = os.path.join(
+    BASE_DIR,
+    "class_sentences.npy"
+)
 
 
 # ============================================================
