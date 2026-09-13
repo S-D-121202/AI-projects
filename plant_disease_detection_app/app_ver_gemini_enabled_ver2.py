@@ -401,7 +401,12 @@ Remedial Measures: ...
 """
 
         with st.spinner("Generating explanation..."):
-            response = chat_model.invoke(gemini_prompt)
+            try:
+                response = chat_model.invoke(gemini_prompt)
+            except Exception as e:
+                st.error(f"Gemini error: {e}")
+                st.exception(e)
+                st.stop()
             st.session_state.llm_output = response.content[0]['text']
             
         # Explainability Generation
