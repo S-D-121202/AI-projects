@@ -367,6 +367,8 @@ if uploaded_file is not None:
 
                 st.session_state.predicted_prompt = classes[predicted_idx]
 
+        st.write("DEBUG 1: Classification completed")
+
         # Ollama LLM Explanation
         gemini_prompt = f"""
 You are an agricultural plant disease assistant.
@@ -410,12 +412,16 @@ Remedial Measures: ...
                 st.exception(e)
                 st.stop()
             st.session_state.llm_output = response.content[0]['text']'''
+
+            st.write("DEBUG 2: About to call Groq")
+            
             response = client.chat.completions.create(
                 model="openai/gpt-oss-20b",
                 messages=[
                     {"role": "user", "content": gemini_prompt}
                 ]
             )
+            st.write("DEBUG 3: Groq call completed")
             st.session_state.llm_output = response.choices[0].message.content
             
         # Explainability Generation
