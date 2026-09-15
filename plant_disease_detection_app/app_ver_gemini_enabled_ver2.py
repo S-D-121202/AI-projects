@@ -413,7 +413,7 @@ Remedial Measures: ...
             response = client.chat.completions.create(
                 model="openai/gpt-oss-20b",
                 messages=[
-                    {"role": "user", "content": groq_prompt}
+                    {"role": "user", "content": gemini_prompt}
                 ]
             )
             st.session_state.llm_output = response.choices[0].message.content
