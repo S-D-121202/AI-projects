@@ -22,16 +22,16 @@ from SCOLD_explainability_test_version import (
     SCOLDVisualizer
 )
 
-client = Groq(api_key=os.environ["GROQ_API_KEY"])
+client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
-chat_model = ChatGoogleGenerativeAI(
+'''chat_model = ChatGoogleGenerativeAI(
     model="gemini-3.7-flash",
     temperature=1,
     thinking_level="low",
     request_timeout=30,
     max_retries=0,
     google_api_key=st.secrets["GEMINI_API_KEY"]
-)
+)'''
 
 # ============================================================
 # PAGE CONFIGURATION
