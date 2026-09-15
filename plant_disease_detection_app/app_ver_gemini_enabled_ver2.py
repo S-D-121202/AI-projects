@@ -11,6 +11,7 @@ from PIL import Image
 from gtts import gTTS
 import os
 from langchain_google_genai import ChatGoogleGenerativeAI
+from groq import Groq
 
 from transformers import AutoProcessor, AutoTokenizer
 
@@ -20,6 +21,8 @@ from SCOLD_explainability_test_version import (
     SCOLDGradCAM,
     SCOLDVisualizer
 )
+
+client = Groq(api_key=os.environ["GROQ_API_KEY"])
 
 chat_model = ChatGoogleGenerativeAI(
     model="gemini-3.7-flash",
@@ -400,13 +403,20 @@ Remedial Measures: ...
 """
 
         with st.spinner("Generating explanation..."):
-            try:
+            '''try:
                 response = chat_model.invoke(gemini_prompt)
             except Exception as e:
                 st.error(f"Gemini error: {e}")
                 st.exception(e)
                 st.stop()
-            st.session_state.llm_output = response.content[0]['text']
+            st.session_state.llm_output = response.content[0]['text']'''
+            response = client.chat.completions.create(
+                model="openai/gpt-oss-20b",
+                messages=[
+                    {"role": "user", "content": groq_prompt}
+                ]
+            )
+            st.session_state.llm_output = response.choices[0].message.content
             
         # Explainability Generation
         with st.spinner("Generating Grad-CAM explainability maps..."):
