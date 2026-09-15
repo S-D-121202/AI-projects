@@ -9,5 +9,5 @@ Pillow==12.3.0
 gTTS==2.5.4
 langchain-google-genai==4.3.4
 matplotlib
-grok
+groq
 openai
